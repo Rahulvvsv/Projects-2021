@@ -10,10 +10,14 @@ print(BASE_DIR)
 data = os.listdir(BASE_DIR)
 print(data)
 
+try:
+    data2 = requests.get("http://localhost:8000")
+    print("server 2 connected")
+    data2 = data2.text
+    data2 = data2.split(" ")
+except:
+    print("Not able to get server 2 info")
 
-data2 = requests.get("http://localhost:8000")
-data2 = data2.text
-data2 = data2.split(" ")
 
 
 
@@ -30,6 +34,7 @@ file1 = "files in server1 directory are:"
 file2 = "files in server2 directory2 are:"
 data2 = listToString(data2)
 data = listToString(data)
+
 
 final_data = file1 + data + "\n" +file2+data2
 
@@ -49,4 +54,5 @@ class Server(BaseHTTPRequestHandler):
 
 
 httpd = HTTPServer(('localhost', 8080), Server)
+print("server running on localhost:8080")
 httpd.serve_forever()

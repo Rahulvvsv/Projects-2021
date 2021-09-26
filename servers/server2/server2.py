@@ -28,6 +28,6 @@ class Server(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(bytes(file_to_open,'utf-8'))
 
-
+print("server running on local host 8000")
 httpd = HTTPServer(('localhost', 8000), Server)
 httpd.serve_forever()
