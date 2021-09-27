@@ -31,7 +31,7 @@ def listToString(s):
     count = 1
     str1 = ""
     for ele in s:
-        str1 += str(count)+" " + ele + "\n"
+        str1 += str(count)+"." + ele + "\n"
         count += 1
     return str1
 
