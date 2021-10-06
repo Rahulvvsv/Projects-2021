@@ -11,7 +11,7 @@ import {
 function App() {
   return (
     <Router>
-      <div className="container dark">
+      <div className="container ">
         <div className="app">
         <Header></Header>
         <Route path="/" exact component={NotesListPage} />
