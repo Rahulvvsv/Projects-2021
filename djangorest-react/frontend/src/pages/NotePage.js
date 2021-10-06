@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react'
-
+import { Link } from 'react-router-dom'
+//import {ReactComponent as Arrowleft} from '../assets/arrow-left.svg'
 const NotePage = ({match}) => {
     let [note,setNote] = useState(null)
 
@@ -14,8 +15,13 @@ const NotePage = ({match}) => {
         setNote(data)
     }
     return (
-        <div>
-        <p>{note? note.body:null}</p>
+        <div className="note">
+            <div className="note-header">
+                <Link  to ="/">
+                <h2>go back</h2>
+                </Link>
+            </div>
+        <textarea defaultValue={note? note.body:null}></textarea>
         </div>
     )
 }
